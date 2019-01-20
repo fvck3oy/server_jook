@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 const getData = async () => {
 	try {
-		return await axios.get('http://mon.phuket.psu.ac.th/arubalog/2018-10-29.log')
+		return await axios.get('http://mon.phuket.psu.ac.th/arubalog/2019-01-16.log')
 	} catch (error) {
 		console.error(error)
 	}
@@ -23,7 +23,8 @@ const countData = async () => {
 	const json = CircularJSON.stringify(data.data)
 
 	console.log('kuykuykuykuykuykuy')
-
+	console.log(json)
+	console.log('kuykuykuykuykuykuy')
 	app.get('/api/getpsu', (req, res) => {
 		res.json(json)
 	})
